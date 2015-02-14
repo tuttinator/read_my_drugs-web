@@ -14,9 +14,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'rqrcode_png'
 
-group :development do
-  gem 'thin'
-end
+gem 'thin'
 
 group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
