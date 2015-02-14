@@ -4,13 +4,14 @@ class Api::V1::PrescriptionsController < ApplicationController
   respond_to :html, :json
 
   def show
-    @text = @prescription.translator(params[:langauge]).translate
-    respond_with @prescription
-  end
-
-  def read
-    respond_to :mp3 do
-      send_data @prescription.translator(params[:language]).speak
+    respond_to do |format|
+      format.html do
+        @text = @prescription.translator(params[:language]).translate
+      end
+      format.mp3 do
+        @prescription.translator(params[:language]).translate
+        send_data @prescription.translator(params[:language]).speak
+      end
     end
   end
 

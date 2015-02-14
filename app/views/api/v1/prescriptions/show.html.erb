@@ -2,6 +2,4 @@
 
 <p><%= @text %></p>
 
-<audio controls>
-  <src source="<%= prescription_read_path(@prescription, language: params[:language], format: :mp3) %>">
-</audio>
+<audio controls src="<%= api_prescription_path(@prescription, language: params[:language], format: :mp3) %>" type="audio/mp3">

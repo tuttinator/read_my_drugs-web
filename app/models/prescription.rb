@@ -11,12 +11,12 @@ class Prescription < ActiveRecord::Base
 
   def as_sentence
     route_text = ", via #{route}" if route
-    "Take #{dose} #{dose_units}, #{frequency} per #{frequency_units}" + route_text
+    "Take #{dose} #{dose_units} of #{drug_name}, #{frequency} per #{frequency_units}" + route_text
   end
 
   def translator(to_language)
     return as_sentence if to_language == :en
     @translation ||= {}
-    @translation[to_language] ||= TranslationService.new({ text: as_sentence, from: :en, to: to_language })
+    @translation[to_language] ||= TranslationService.new({ text: as_sentence, from_language: :en, to_language: to_language })
   end
 end
