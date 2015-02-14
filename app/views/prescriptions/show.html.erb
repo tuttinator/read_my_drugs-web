@@ -1,6 +1,5 @@
 <h1><%= @prescription.drug_name %></h1>
 
-
 <img src='data:image/png;base64,<%= @prescription.base64_qr_code %>' alt='QR code'>
 
 <%= link_to 'Edit', edit_prescription_path(@prescription), class: 'btn btn-default pull-right' %>

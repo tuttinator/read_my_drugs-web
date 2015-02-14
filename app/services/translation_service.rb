@@ -1,5 +1,5 @@
 class TranslationService
-  attr_reader :translator, :text, :from_langauge, :to_language, :result
+  attr_reader :translator, :text, :from_language, :to_language, :result
 
   def initialize(options = {})
     @translator    = BingTranslator.new(ENV['BING_CLIENT_ID'], ENV['BING_CLIENT_SECRET'])
@@ -9,7 +9,7 @@ class TranslationService
   end
 
   def translate
-    @result = translator.translate text, from: from_language, to: to_language
+    @result ||= translator.translate text, from: from_language, to: to_language
   end
 
   def speak(phrase = result, language = to_language)

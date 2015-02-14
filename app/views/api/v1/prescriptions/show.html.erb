@@ -1,33 +1,7 @@
-<h1><%= @prescription.drug_name %></h1>
+<h1 id='drug-name-header'><%= @prescription.drug_name %></h1>
 
-<table class='table'>
-  <tr>
-    <td>
-      Dose
-    </td>
-    <td>
-      <%= @prescription.dose %>
-      <%= @prescription.dose_units %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Frequency
-    </td>
-    <td>
-      <%= @prescription.frequency %>
-      per
-      <%= @prescription.frequency_units %>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Route
-    </td>
-    <td>
-      <%= @prescription.route %>
-    </td>
-  </tr>
-</table>
+<p><%= @text %></p>
 
-<p>Links to enlarge and read out go here</p>
+<audio controls>
+  <src source="<%= prescription_read_path(@prescription, language: params[:language], format: :mp3) %>">
+</audio>
