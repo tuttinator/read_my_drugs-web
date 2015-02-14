@@ -17,6 +17,6 @@ class Prescription < ActiveRecord::Base
   def translator(to_language)
     return as_sentence if to_language == :en
     @translation ||= {}
-    @translation[to_language] ||= TranslationService.new({ text: as_sentence, from_language: :en, to_language: to_language })
+    @translation[to_language] ||= TranslationService.new({ text: as_sentence, from: :en, to: to_language })
   end
 end
