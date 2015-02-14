@@ -1,10 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#drug-name-header {
+  background-color: #4169E1;
+}
+
 /* Space out content a bit */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+ background-color: #ADD8E6;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
