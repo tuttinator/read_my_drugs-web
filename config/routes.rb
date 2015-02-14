@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :prescription
+  resources :prescriptions
 
   root to: 'prescriptions#index'
 end

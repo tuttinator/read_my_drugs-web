@@ -1,0 +1,49 @@
+<div class='row marketing'>
+  <%= link_to 'Add prescription', new_prescription_path, class: 'btn btn-success pull-right' %>
+</div>
+
+<table class='table table-hover'>
+  <thead>
+    <th>
+      QR Code
+    </th>
+    <th>
+      Drug Name
+    </th>
+    <th>
+      Dose
+    </th>
+    <th>
+      Frequency
+    </th>
+    <th>
+      Route
+    </th>
+    <th></th>
+  </thead>
+  <% @prescriptions.each do |prescription| %>
+    <tr>
+      <td>
+        <img src='data:image/png;base64,<%= prescription.base64_qr_code %>' alt='QR code' height='20' width='20'>
+      </td>
+      <td>
+        <%= link_to prescription.drug_name, prescription %>
+      </td>
+      <td>
+        <%= prescription.dose %>
+      </td>
+      <td>
+        <%= prescription.frequency %>
+      </td>
+      <td>
+        <%= prescription.route %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_prescription_path(prescription), class: 'btn btn-default' %>
+        |
+        <%= link_to 'Delete', prescription_path(prescription), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+

@@ -14,7 +14,7 @@ class PrescriptionsController < ApplicationController
   end
 
   def create
-    @prescription = Prescription.new(prescription_params)
+    @prescription = Prescription.create(prescription_params)
     respond_with @prescription
   end
 

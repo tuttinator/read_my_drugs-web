@@ -1,0 +1,7 @@
+<%= simple_form_for(@prescription, html: { class: 'form-horizontal' }) do |f| %>
+  <%= f.input :drug_name %>
+  <%= f.input :dose %>
+  <%= f.input :frequency %>
+  <%= f.input :route %>
+  <%= f.button :submit %>
+<% end %>
