@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214025417) do
+ActiveRecord::Schema.define(version: 20150214055536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,11 @@ ActiveRecord::Schema.define(version: 20150214025417) do
     t.decimal  "dose"
     t.string   "route"
     t.integer  "frequency"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.datetime "deleted_at"
+    t.string   "dose_units"
+    t.string   "frequency_units"
   end
 
 end

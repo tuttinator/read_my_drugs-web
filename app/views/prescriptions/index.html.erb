@@ -30,18 +30,16 @@
         <%= link_to prescription.drug_name, prescription %>
       </td>
       <td>
-        <%= prescription.dose %>
+        <%= prescription.dose %> <%= prescription.dose_units %>
       </td>
       <td>
-        <%= prescription.frequency %>
+        <%= prescription.frequency %> <%= prescription.frequency_units %>
       </td>
       <td>
         <%= prescription.route %>
       </td>
       <td>
         <%= link_to 'Edit', edit_prescription_path(prescription), class: 'btn btn-default' %>
-        |
-        <%= link_to 'Delete', prescription_path(prescription), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
       </td>
     </tr>
   <% end %>

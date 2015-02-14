@@ -26,11 +26,6 @@ class PrescriptionsController < ApplicationController
     respond_with @prescription
   end
 
-  def destroy
-    @prescription.update(deleted_at: Time.now)
-    redirect_to :index
-  end
-
   private
 
   def set_prescription
@@ -38,7 +33,7 @@ class PrescriptionsController < ApplicationController
   end
 
   def prescription_params
-    params.require(:prescription).permit(:drug_name, :dose, :frequency, :route)
+    params.require(:prescription).permit(:drug_name, :dose, :dose_units, :frequency, :frequency_units, :route)
   end
 
 end
